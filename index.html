@@ -61,13 +61,34 @@
             drawSnake();
         }
 
-
+        document.addEventListener('keydown',function(e){
+            let dx, dy;
+            // left
+            if( e.keyCode ==100 ){
+                dx = -grid;
+                dy = 0;
+            }
+            // up
+            else if( e.keyCode == 104){
+                dx = 0;
+                dy = -grid;
+            }
+            // right
+            else if( e.keyCode == 102){
+                dx = grid;
+                dy = 0;
+            }
+            // done
+            else if( e.keyCode == 101){
+                dx = 0;
+                dy = grid;
+            }
  
             // Clear the canvas
             context.clearRect(0, 0, canvas.width, canvas.height);
             moveSnake(dx,dy);
             drawFruit();
-    
+        });
         </script>
     </body>
 </html>
