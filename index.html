@@ -56,6 +56,11 @@
         function moveSnake(dx, dy){
             snake.x += dx;
             snake.y += dy;
+        // boundaries
+            if(snake.x < 0 || snake.x == 400 || snake.y < 0 || snake.y == 400 ){
+                alert("out of box");
+                location.href='index.html'
+            }
             snake.cells.unshift({x: snake.x, y: snake.y});
             snake.cells.pop();
             drawSnake();
@@ -83,7 +88,7 @@
                 dx = 0;
                 dy = grid;
             }
- 
+            
             // Clear the canvas
             context.clearRect(0, 0, canvas.width, canvas.height);
             moveSnake(dx,dy);
