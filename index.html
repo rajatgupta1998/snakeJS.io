@@ -83,12 +83,12 @@
                 dx = grid;
                 dy = 0;
             }
-            // done
-            else if( e.keyCode == 101){
+            // down
+            else if( e.keyCode == 98){
                 dx = 0;
                 dy = grid;
             }
-            
+
             // Clear the canvas
             context.clearRect(0, 0, canvas.width, canvas.height);
             moveSnake(dx,dy);
