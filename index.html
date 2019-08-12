@@ -35,6 +35,14 @@
             x : 320,
             y : 320
         }
+
+        function drawFruit(){
+            context.fillStyle = 'red';
+            context.fillRect(fruit.x, fruit.y, grid-1, grid-1);
+        }
+        drawFruit();
+
+
         function drawSnake(){
             context.fillStyle = 'green';
             for(let i = 0; i < snake.cells.length ; i++)
@@ -42,14 +50,24 @@
                 context.fillRect(snake.cells[i].x , snake.cells[i].y , grid-1, grid-1);
             }
         }
-        
-        function drawFruit(){
-            context.fillStyle = 'red';
-            context.fillRect(fruit.x, fruit.y, grid-1, grid-1);
+        drawSnake();
+
+
+        function moveSnake(dx, dy){
+            snake.x += dx;
+            snake.y += dy;
+            snake.cells.unshift({x: snake.x, y: snake.y});
+            snake.cells.pop();
+            drawSnake();
         }
 
-        drawFruit();
-        drawSnake();
+
+ 
+            // Clear the canvas
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            moveSnake(dx,dy);
+            drawFruit();
+    
         </script>
     </body>
 </html>
