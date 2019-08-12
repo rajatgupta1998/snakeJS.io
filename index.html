@@ -31,6 +31,10 @@
             y : 160,
             cells : [{x : 160, y : 160}, {x:144, }] ,
         }
+        var fruit  = {
+            x : 320,
+            y : 320
+        }
         function drawSnake(){
             context.fillStyle = 'green';
             for(let i = 0; i < snake.cells.length ; i++)
@@ -38,6 +42,13 @@
                 context.fillRect(snake.cells[i].x , snake.cells[i].y , grid-1, grid-1);
             }
         }
+        
+        function drawFruit(){
+            context.fillStyle = 'red';
+            context.fillRect(fruit.x, fruit.y, grid-1, grid-1);
+        }
+
+        drawFruit();
         drawSnake();
         </script>
     </body>
