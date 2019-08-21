@@ -149,6 +149,11 @@
                 dx = 0;
                 dy = grid;
             }
+            else
+            {
+                alert('Please use NumPad Arrows only, Click OK to Reset');
+                location.href = 'index.html';
+            }
 
             // Clear the canvas
             context.clearRect(0, 0, canvas.width, canvas.height);
