@@ -97,6 +97,8 @@
         function eatIt(){
             if(snake.x == fruit.x && snake.y == fruit.y){
                 snake.eatFruit = true ;
+                newFruit(); // new fruit is spawned
+                drawFruit();
             }
         }
 
