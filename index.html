@@ -121,6 +121,9 @@
         function gameOver(){
             context.clearRect(0, 0, canvas.width, canvas.height);
             snake.cells = [];
+            context.fillStyle = 'red';
+            context.font = "30px Arial";
+            context.textAlign = "center";
             context.fillText("Game Over. Score: " + score , canvas.width/2, canvas.height/2);
         }
 
