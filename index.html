@@ -84,6 +84,15 @@
             }
         }
 
+        // Generate new fruit
+        function newFruit(){
+            fruit.x = getRandomInt();
+            fruit.y = getRandomInt();
+            if(checkFruitIsOnSnake() ){
+                newFruit();
+                }
+        }
+
         function gameOver(){
             context.clearRect(0, 0, canvas.width, canvas.height);
             snake.cells = [];
