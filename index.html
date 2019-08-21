@@ -59,8 +59,8 @@
             snake.x += dx;
             snake.y += dy;
             snake.cells.unshift({x: snake.x, y: snake.y});
-            snake.cells.pop();
-            drawSnake();
+            if(!snake.eatFruit)snake.cells.pop();
+            else snake.eatFruit = false;
         }
         // boundaries
         function checkBound(){
