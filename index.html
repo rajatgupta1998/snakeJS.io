@@ -86,8 +86,8 @@
 
         // Generate new fruit
         function newFruit(){
-            fruit.x = getRandomInt();
-            fruit.y = getRandomInt();
+            fruit.x = randomInt();
+            fruit.y = randomInt();
             if(checkFruitIsOnSnake() ){
                 newFruit();
                 }
@@ -135,6 +135,7 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             moveSnake(dx,dy);
             checkBound();
+            eatIt();
             if(snake.die){
                 gameOver();
             }
