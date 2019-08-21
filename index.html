@@ -101,7 +101,16 @@
                 drawFruit();
             }
         }
-
+        // but apne ko nahi khane ka
+        function selfBite(){
+            for(var i = 4; i < snake.cells.length; i++)
+            {
+                if(snake.x == snake.cells[i].x && snake.y == snake.cells[i].y)
+                {
+                    snake.die = true;
+                }
+            }
+        }
         function gameOver(){
             context.clearRect(0, 0, canvas.width, canvas.height);
             snake.cells = [];
@@ -135,6 +144,7 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             moveSnake(dx,dy);
             checkBound();
+            selfBite();
             eatIt();
             if(snake.die){
                 gameOver();
