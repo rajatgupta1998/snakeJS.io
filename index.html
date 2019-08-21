@@ -62,9 +62,8 @@
             snake.cells.pop();
             drawSnake();
         }
-
+        // boundaries
         function checkBound(){
-                            // boundaries
             if(snake.x < 0 || snake.x == 400 || snake.y < 0 || snake.y == 400 ){
                 alert("out of box");
                 snake.die = true;
