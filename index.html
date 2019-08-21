@@ -69,6 +69,12 @@
                 snake.die = true;
             }
         }
+
+        // randomize
+        function randomInt(){
+          return Math.floor(Math.random() * 25) * grid;
+        }
+
         function gameOver(){
             context.clearRect(0, 0, canvas.width, canvas.height);
             snake.cells = [];
