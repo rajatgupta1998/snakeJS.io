@@ -70,6 +70,11 @@
                 location.href='index.html';
             }
         }
+        function gameOver(){
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            snake.cells = [];
+            context.fillText("Game Over" , canvas.width/2, canvas.height/2);
+        }
 
         document.addEventListener('keydown',function(e){
             let dx, dy;
@@ -98,6 +103,9 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             moveSnake(dx,dy);
             checkBound();
+            if(snake.die){
+                gameOver();
+            }
             drawSnake();
             drawFruit();
         });
