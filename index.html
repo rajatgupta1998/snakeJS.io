@@ -93,6 +93,13 @@
                 }
         }
 
+        // snake gotta eat
+        function eatIt(){
+            if(snake.x == fruit.x && snake.y == fruit.y){
+                snake.eatFruit = true ;
+            }
+        }
+
         function gameOver(){
             context.clearRect(0, 0, canvas.width, canvas.height);
             snake.cells = [];
