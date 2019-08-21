@@ -39,6 +39,10 @@
         }
 
         var score = Number(20);
+        
+        function increaseScore(){
+            score += 10;
+        }
 
         function drawFruit(){
             context.fillStyle = 'red';
@@ -101,6 +105,7 @@
                 snake.eatFruit = true ;
                 newFruit(); // new fruit is spawned
                 drawFruit();
+                increaseScore();
             }
         }
         // but apne ko nahi khane ka
@@ -116,7 +121,7 @@
         function gameOver(){
             context.clearRect(0, 0, canvas.width, canvas.height);
             snake.cells = [];
-            context.fillText("Game Over" , canvas.width/2, canvas.height/2);
+            context.fillText("Game Over. Score: " + score , canvas.width/2, canvas.height/2);
         }
 
         document.addEventListener('keydown',function(e){
